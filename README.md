@@ -1,6 +1,8 @@
 Hebmorph-exist
 --------------
 
+EXPath packaging for hebmorph Hebrew morphology analyzer 
+
 This is a distribution of the Hebmorph morph analyzer/Lucene extension, compilable as an EXPath package for
 the [eXist native XML database] (http://exist-db.org).
 
