@@ -1,0 +1,32 @@
+# local mods to Makefile
+local.build.properties
+
+# generated build dir
+build/
+
+# generated dist dir
+dist/
+
+# backup files
+*.bak
+*.bkp
+*.sw?
+*.tmp
+*.temp
+temp/
+tmp/
+*~
+
+# compiled Python
+*.pyc
+
+# local files project
+.pydevproject
+.buildpath
+.project
+.settings
+private-scripts/
+
+
+# patch rejects
+*.rej

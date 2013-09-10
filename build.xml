@@ -1,0 +1,53 @@
+<project name="hebmorph-exist" default="dist" basedir=".">
+	<description>
+        Build file for hebmorph-exist
+    </description>
+	<!-- set global properties for this build -->
+    <property name="lib.dir" location="lib"/>
+	<property name="src" location="src"/>
+    <property name="build" location="build"/>
+	<property name="dist"  location="dist"/>
+
+	<!-- set local properties for the build -->
+	<property file="local.build.properties"/>
+    <!-- set global default properties for the build -->
+    <property file="build.properties"/>
+	
+
+	<target name="init">
+		<!-- Create the time stamp -->
+		<tstamp/>
+        <!-- make build dirs -->
+        <mkdir dir="${build}"/>
+        <mkdir dir="${dist}"/>
+	</target>
+
+	<target name="dist" depends="init,xar"
+		description="build everything"/>
+
+	<target name="xar" 
+		depends="init"
+        description="generate the xar distribution" >
+        <copy todir="${build}">
+			<fileset dir="${src}">
+				<include name="**/*.jar"/>
+				<include name="**/*.xml"/>
+				<exclude name="**/*.xar" />
+				<exclude name="build.xml"/>
+			</fileset>
+        </copy>
+		<zip 
+            destfile="${dist}/hebmorph-exist.xar" 
+            update="true"
+            basedir="${build}">
+		</zip>
+	</target>
+
+	<target name="clean"
+        description="clean up">
+		<!-- Delete the ${build} and ${dist} directory trees -->
+	    <delete dir="${build}"/>
+    	<delete dir="${dist}"/>
+	</target>
+</project>
+
