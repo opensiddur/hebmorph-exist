@@ -34,7 +34,7 @@ Hebmorph is licensed under the GNU Affero General Public License, version 3. A c
 included in this distribution.
 
 These Hebmorph binaries were compiled from the source code at https://github.com/opensiddur/HebMorph .
-The git revision SHA is 9298a8c71a62af06cac7a8001066b6387020a6b2
+The git revision SHA is 681f2c8f2ce41bcad86683c2973eed81d580e14f
 
 All other code is licensed under the MIT License:
 
