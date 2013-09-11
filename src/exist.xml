@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package xmlns="http://exist-db.org/ns/expath-pkg">
+    <jar>hebmorph.jar</jar>
+    <jar>lucene.hebrew.jar</jar>
+</package>
