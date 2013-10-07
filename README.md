@@ -9,6 +9,10 @@ the [eXist native XML database] (http://exist-db.org).
 To compile, run `ant` from the root of the clone. The XAR package will be built in the `dist/` directory. 
 It can be installed using the normal [installation mechanism] (http://exist-db.org/exist/apps/doc/dashboard.xml#D2.2.4.5) for EXPath packages in eXist.
 
+Note that the XAR distribution may not work! If it does not, copy the files from `src/hebmorph-exist` to `$EXIST_HOME/extensions/indexes/lucene/lib`. You will also have to start eXist with an environment variable: `HSPELL_DATA_FILES_PATH=$EXIST_HOME/extensions/indexes/lucene/lib/hspell-data-files`
+
+The Open Siddur installation does this automatically with an ant script.
+
 Once installed, you can reference the hebmorph analyzer from `collection.xconf`:
 
 ```xml
@@ -34,7 +38,7 @@ Hebmorph is licensed under the GNU Affero General Public License, version 3. A c
 included in this distribution.
 
 These Hebmorph binaries were compiled from the source code at https://github.com/opensiddur/HebMorph .
-The git revision SHA is 681f2c8f2ce41bcad86683c2973eed81d580e14f
+The git revision SHA is 90af317debb52dafb93e76870ce5ca7f8a99bad2 . 
 
 All other code is licensed under the MIT License:
 
