@@ -3,7 +3,7 @@
   xmlns="http://expath.org/ns/pkg" 
   name="http://jewishliturgy.org/apps/hebmorph-exist" 
   abbrev="hebmorph-exist" 
-  version="0.0.1" 
+  version="0.0.2" 
   spec="1.0">
     <title>Hebmorph for eXist</title>
     <!--  dependency package="http://exist-db.org/apps/shared"/-->
