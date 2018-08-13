@@ -102,8 +102,16 @@ public final class HSpellLoader {
 
     public static String getHspellPath() {
         String hspellPath = null;
+        File folder = null;
         ClassLoader classLoader = HSpellLoader.class.getClassLoader();
-        File folder = new File(classLoader.getResource("").getPath());
+        try {
+          folder = new File(classLoader.getResource("").getPath());
+        }
+        catch (java.lang.NullPointerException n) {
+          // in the eXist classloader context, getResource() is an NPE.
+          // this gives the option of avoiding the NPE by providing the path as an environment variable
+          folder = new File(System.getenv("HSPELL_DATA_FILES_PATH"));
+        }
         while (true) {
             File tmp = new File(folder, "hspell-data-files");
             if (tmp.exists() && tmp.isDirectory()) {
