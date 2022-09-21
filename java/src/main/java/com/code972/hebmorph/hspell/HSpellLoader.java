@@ -114,6 +114,7 @@ public final class HSpellLoader {
           folder = new File(System.getenv("HSPELL_DATA_FILES_PATH"));
             throw new RuntimeException("got folder with NPE: " + folder.getPath());
         }
+        /*
         while (true) {
             File tmp = new File(folder, "hspell-data-files");
             System.err.println("trying folder:" + tmp.getPath());
@@ -132,6 +133,7 @@ public final class HSpellLoader {
             hspellPath += "/";
         }
         return hspellPath;
+        */
     }
 
     public static HashMap<String, Integer> readDefaultPrefixes() throws IOException {
