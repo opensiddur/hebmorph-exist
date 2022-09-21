@@ -105,15 +105,14 @@ public final class HSpellLoader {
         File folder = null;
         ClassLoader classLoader = HSpellLoader.class.getClassLoader();
         try {
-            System.err.println("Trying to get hspell data path...");
           folder = new File(classLoader.getResource("").getPath());
-          System.err.println("got folder without NPE: " + folder.getPath());
+          throw new RuntimeException("got folder without NPE: " + folder.getPath());
         }
         catch (java.lang.NullPointerException n) {
           // in the eXist classloader context, getResource() is an NPE.
           // this gives the option of avoiding the NPE by providing the path as an environment variable
           folder = new File(System.getenv("HSPELL_DATA_FILES_PATH"));
-          System.err.println("got folder with NPE: " + folder.getPath());
+            throw new RuntimeException("got folder with NPE: " + folder.getPath());
         }
         while (true) {
             File tmp = new File(folder, "hspell-data-files");
